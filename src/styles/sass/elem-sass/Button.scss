@@ -1,0 +1,18 @@
+.tmskins-btn {
+    background: none;
+    text-decoration: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #FBFBFB;
+    border: 3px solid #FBFBFB;
+    padding: 10px 20px;
+    transition: .2s ease-in-out;
+    &:hover {
+        color: #010101;
+        background: #4FD500;
+        border: 3px solid #4FD500;
+        box-shadow: 0px 0px 14px 0px #4FD500;
+    }
+}

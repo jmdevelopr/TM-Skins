@@ -1,0 +1,50 @@
+.Cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 60px;
+    h3 {
+        margin: 60px 0;
+        font-size: 30px;
+    }
+    .item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "img name"
+                             "quantity price";
+        margin-bottom: 20px;
+        width: 80%;
+        img {
+            width: 71px;
+            height: 40px;
+        }
+        .item-name {
+            font-size: 12px;
+            width: 200px;
+            text-align: right;
+        }
+        .quantity {
+            font-size: 12px;
+            align-self: center;
+        }
+        .item-price {
+            font-size: 12px;
+            text-align: right;
+            align-self: center;
+            color: #4FD500;
+        }
+    }
+    .total {
+        font-size: 14px;
+        text-align: right;
+        width: 80%;
+        .item-price {
+            color: #4FD500;
+            margin-left: 10px;
+        }
+        margin-bottom: 40px;
+    }
+}

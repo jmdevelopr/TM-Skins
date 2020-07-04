@@ -1,0 +1,71 @@
+.Home {
+    .img-header {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url('../../assets/header-bg.png');
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            background-position-x: 75%;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg,
+                                        #010101 0%,
+                                          transparent 25%,
+                                          transparent 75%, 
+                                          #010101 100%);
+            }
+        }
+        h3 {
+            font-size: 30px;
+        }
+        h5 {
+            font-size: 26px;
+            padding: 0 50px;
+            text-align: center;
+        }
+    }
+    .shop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        h4 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 80px;
+        }
+        .skin {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            margin-bottom: 70px;
+            height: 300px;
+            img {
+                width: 265px;
+            }
+            .skin-name {
+                font-size: 16px;
+            }
+            .skin-price {
+                font-size: 20px;
+                color: #4FD500;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.main-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "logo nav nav nav";
+    padding: 10px 30px;
+    img {
+        width: 37px;
+        height: 38px;
+        grid-area: logo;
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        grid-area: nav;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        div {
+            &:hover {
+                color: #4FD500;
+            }
+        }
+        .search {
+            font-size: 18px;
+        }
+    }
+}

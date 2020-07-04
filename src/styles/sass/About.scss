@@ -1,0 +1,48 @@
+.About {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 20px 80px 4fr 1fr;
+    grid-template-areas: "."
+                         "title"
+                         "."
+                         "about"
+                         ".";
+    min-height: 85vh;
+    padding: 0 40px;
+    .about-bg {
+        position: absolute;
+        top: 15%;
+        left: 0;
+        width: 100vw;
+        height: 45vh;
+        background: url('../../assets/about-bg.png');
+        background-size: cover;
+        background-position-x: 80%;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                                    #010101 0%,
+                                      transparent 25%,
+                                      transparent 75%, 
+                                      #010101 100%);
+        }
+    }
+    h3 {
+        font-size: 30px;
+        text-align: center;
+        span {
+            color: #4FD500;
+        }
+        grid-area: title;
+    }
+    p {
+        z-index: 1;
+        font-size: 16px;
+        grid-area: about;
+    }
+}

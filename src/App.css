@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  background: #010101;
+  color: #FBFBFB;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.App h3, .App h4, .App h5 {
+  transform: skew(-27deg);
+}
+
+.App h3, .App h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+
+.App h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
