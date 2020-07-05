@@ -1,14 +1,76 @@
-.back {
+.link {
+    color: #F1F1F1;
+    text-decoration: none;
+}
+.Back {
     position: absolute;
-    top: 0;
-    left: 30px;
+    top: 20px;
+    left: 40px;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 110px;
+    cursor: pointer;
     .icon {
         font-size: 30px;
+        transition: .2s ease-in-out;
+    }
+    &:hover {
+        .icon {
+            color: #4FD500;
+        }
+        span {
+            span:nth-child(1) {
+                animation: backHover 1.7s infinite;
+                animation-delay: 0s;
+            }
+            span:nth-child(2) {
+                animation: backHover 1.7s infinite;
+                animation-delay: .2s;
+            }
+            span:nth-child(4) {
+                animation: backHover 1.7s infinite;
+                animation-delay: .4s;
+            }
+            span:nth-child(5) {
+                animation: backHover 1.7s infinite;
+                animation-delay: .6s;
+            }
+            span:nth-child(6) {
+                animation: backHover 1.7s infinite;
+                animation-delay: .8s;
+            }
+            span:nth-child(7) {
+                animation: backHover 1.7s infinite;
+                animation-delay: 1s;
+            }
+        }
     }
 }
+
+@keyframes backHover {
+    0% {
+        color: #F1F1F1;
+    }
+    2% {
+        color: #4FD500;
+    }
+    10% {
+        color: #4FD500;
+    }
+    12% {
+        color: #F1F1F1;
+    }
+    100% {
+    }
+}
+
+// .Back {
+//     span {
+//         span:nth-child(1) {
+//             animation: backHover 1s infinite;
+//         }
+//     }
+// }

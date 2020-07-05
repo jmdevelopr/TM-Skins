@@ -7,10 +7,12 @@
 .App {
   background: #010101;
   color: #FBFBFB;
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
+  overflow-x: hidden;
 }
 
 .App h3, .App h4, .App h5 {

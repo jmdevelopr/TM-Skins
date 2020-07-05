@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../styles/css/Home.min.css';
-
+import '../styles/css/HomeMedia.min.css';
 
 import skin from '../assets/skin.png';
 

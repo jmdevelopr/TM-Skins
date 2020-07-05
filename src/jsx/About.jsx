@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/css/About.min.css';
+import '../styles/css/AboutMedia.min.css';
 
 import Back from './elems/Back';
 

@@ -8,16 +8,16 @@
                          "about"
                          ".";
     min-height: 85vh;
-    padding: 0 40px;
+    padding: 20px 40px;
     .about-bg {
         position: absolute;
-        top: 15%;
+        top: 140px;
         left: 0;
-        width: 100vw;
-        height: 45vh;
+        width: 100%;
+        height: 400px;
         background: url('../../assets/about-bg.png');
         background-size: cover;
-        background-position-x: 80%;
+        background-position-x: 75%;
         &:before {
             content: '';
             position: absolute;

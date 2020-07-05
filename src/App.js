@@ -7,15 +7,31 @@ import About from './jsx/About';
 import Cart from './jsx/Cart';
 import Footer from './jsx/Footer';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
-      <Header />
-      {/* <Home /> */}
-      <About />
-      {/* <Cart /> */}
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
