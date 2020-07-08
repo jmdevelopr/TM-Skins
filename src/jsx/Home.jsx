@@ -13,9 +13,11 @@ import Rin from '../assets/skins/Rin.png';
 import Spheriz from '../assets/skins/Spheriz.png';
 import Teamq from '../assets/skins/Teamq.png';
 
-import Button from './elems/Button';
+import ShopItem from './elems/ShopItem';
 
 import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 
 import { addToCart } from '../store/actions/shopActions';
 
@@ -100,16 +102,17 @@ class Home extends Component {
                 <section className="shop">
                     <h4>OUR SKINS</h4>
                     {this.shopItems.map(item => (
-                        <div className="skin" key={item.id}>
-                            <img src={item.img} alt="skin-img"/>
-                            <p className="skin-name">{item.name}</p>
-                            <p className="skin-price">${item.price}</p>
-                            <Button name="ADD TO CART" click={() => this.handleAddToCart(item)}/>
-                        </div>
+                        <ShopItem item={item} add={() => this.handleAddToCart(item)} key={item.id}/>
                     ))}
                 </section>
             </div>
           );
+    }
+}
+
+const mapStateToProps = state => {
+    console.log(state)
+    return {
     }
 }
 
@@ -119,4 +122,9 @@ const mapDispatchToProps = dispatch => {
     };
 }
 
-export default connect(null, mapDispatchToProps)(Home);
+const enchance = compose(
+    firestoreConnect([{ collection: 'skins' }]),
+    connect(mapStateToProps, mapDispatchToProps)
+)
+
+export default enchance(Home);
