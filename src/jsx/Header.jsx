@@ -12,7 +12,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <header className="main-header">
-            <img src={logo} alt="logo"/>
+            <Link to='/' className="logo">
+                <img src={logo} alt="logo"/>
+            </Link>
             <nav>
                 <Link to="/" className="link">
                     <div className="home-link">

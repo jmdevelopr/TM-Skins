@@ -6,6 +6,7 @@ import Home from './jsx/Home';
 import Skin from './jsx/Skin';
 import About from './jsx/About';
 import Cart from './jsx/Cart';
+import Checkout from './jsx/Checkout';
 import Footer from './jsx/Footer';
 
 import {
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/cart">
             <Cart />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
           </Route>
           <Route path="/:skin" component={Skin} />
         </Switch>

@@ -4,3 +4,10 @@ export const addToCart = item => {
         item
     }
 }
+
+export const subQuantity = item => {
+    return {
+        type: 'SUBTRACT',
+        item
+    }
+}

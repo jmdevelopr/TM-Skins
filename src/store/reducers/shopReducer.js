@@ -22,6 +22,21 @@ const shopReducer = (state = initState, action) => {
             return {...state, cart: newCart}
         }
     }
+
+    if (action.type === 'SUBTRACT') {
+        let newCart = state.cart;
+        state.cart.forEach((item, index) => {
+            if (item.id === action.item.id) {
+                if (newCart[index].quantity > 1)
+                    newCart[index].quantity -= 1;
+                else
+                    newCart = newCart.filter(item => item !== newCart[index])
+            }
+        })
+        return Object.assign({}, state, {
+            cart: newCart
+        })
+    }
     return state;
 }
 

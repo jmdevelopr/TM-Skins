@@ -2,15 +2,14 @@ import React, {Component} from 'react';
 import '../styles/css/Cart.min.css';
 import '../styles/css/CartMedia.min.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
-
 import Back from './elems/Back';
 import Button from './elems/Button';
+import CartItem from './elems/CartItem';
 
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { addToCart } from '../store/actions/shopActions';
+import { addToCart, subQuantity } from '../store/actions/shopActions';
 
 class Cart extends Component {
 
@@ -28,7 +27,11 @@ class Cart extends Component {
             sum += (item.price * item.quantity);
         });
         return Math.round(sum * 100) / 100;
-        
+    }
+
+    handleSubtractQuantity = item => {
+        this.props.subQuantity(item);
+        this.setState({});
     }
 
     render() {
@@ -39,31 +42,27 @@ class Cart extends Component {
                     <Back />
                     <h3>CART</h3>
                     {this.props.cart.map(item => (
-                        <div className="item" key={item.id}>
-                            <img src={item.img} alt="item-img"/>
-                            <p className="item-name">{item.name}</p>
-                            <div className="quantity-wrap">
-                                <div className="quantity">
-                                    <FontAwesomeIcon icon={faMinus} className="icon"/>
-                                    Quantity: {item.quantity}
-                                    <FontAwesomeIcon icon={faPlus} className="icon" onClick={() => this.handleAddQuantity(item)}/>
-                                </div>
-                            </div>
-                            <p className="item-price">${item.price}</p>
-                        </div>
+                        <CartItem 
+                            item={item}
+                            add={() => this.handleAddQuantity(item)}
+                            sub={() => this.handleSubtractQuantity(item)}
+                            key={item.id}
+                        />
                     ))}
                     <div className="total">
                         TOTAL:
                     <span className="item-price">${this.setPrice()}</span>
                     </div>
-                    <Button name="CHECKOUT"/>
+                    <Link to="/checkout">
+                        <Button name="CHECKOUT"/>
+                    </Link>
                 </div>
             : 
             <div className="Cart">
-                    <Back />
-                    <h3>CART</h3>
-                    <p>Your cart is empty</p>
-                </div>
+                <Back />
+                <h3>CART</h3>
+                <p>Your cart is empty</p>
+            </div>
         )
     }
 }
@@ -77,6 +76,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         addToCart: item => dispatch(addToCart(item)),
+        subQuantity: item => dispatch(subQuantity(item)),
     };
 }
 

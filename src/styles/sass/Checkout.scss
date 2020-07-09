@@ -1,0 +1,69 @@
+.Checkout {
+    position: relative;
+    padding: 20px 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    h3 {
+        font-size: 30px;
+        text-align: center;
+        margin-top: 80px;
+    }
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 60px;
+        p {
+            width: 100%;
+            text-align: left;
+            padding: 0 4px;
+            margin-bottom: 6px;
+        }
+        input {
+            background: #222222;
+            border: none;
+            width: 100%;
+            height: 40px;
+            color: #FBFBFB;
+            margin-bottom: 30px;
+            padding: 10px;
+            &:focus {
+                padding: 10px;
+                outline: 2px solid #4FD500;
+                box-shadow: 0 0 4px 0 #4FD500;
+            }
+        } 
+    }
+    .notes {
+        p {
+            width: 100%;
+            text-align: left;
+            padding: 0 4px;
+            margin-bottom: 6px;
+        }
+        textarea {
+            background: #222222;
+            border: none;
+            width: 100%;
+            max-height: 350px;
+            max-width: 100%;
+            color: #FBFBFB;
+        }
+    }
+    .separator {
+        width: 100%;
+        height: 2px;
+        background: #4FD500;
+        margin: 150px 0;
+    }
+    .options {
+        font-size: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+
+}

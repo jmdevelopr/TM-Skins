@@ -87,8 +87,9 @@ class Home extends Component {
     ]
 
     handleAddToCart = item => {
-        item.quantity = 1;
-        this.props.addToCart(item)
+        const cartItem = {...item};
+        cartItem.quantity = 1;
+        this.props.addToCart(cartItem)
     }
 
     render() {
@@ -101,9 +102,14 @@ class Home extends Component {
                 </header>
                 <section className="shop">
                     <h4>OUR SKINS</h4>
-                    {this.shopItems.map(item => (
+                    {this.props.shopItems 
+                    ? 
+                    this.props.shopItems.map(item => (
                         <ShopItem item={item} add={() => this.handleAddToCart(item)} key={item.id}/>
-                    ))}
+                    ))
+                    :
+                    <div className="loading">Loading...</div>
+                    }
                 </section>
             </div>
           );
@@ -111,8 +117,8 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     return {
+        shopItems: state.firestoreReducer.ordered.skins
     }
 }
 
