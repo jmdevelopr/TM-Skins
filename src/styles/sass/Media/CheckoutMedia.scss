@@ -1,0 +1,72 @@
+@media screen and (min-width: 505px) {
+    .Checkout {
+        padding: 20px 100px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .Checkout {
+        padding: 20px 140px;
+        form {
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .Checkout {
+        padding: 20px 80px;
+        .first-step {
+            display: grid;
+            grid-template-columns: 3fr 40px 4fr;
+            grid-template-rows: 700px 1fr;
+            grid-template-areas: "form . items"
+                                 "form . notes";
+            max-width: 1100px;
+            margin: 0 auto;
+            form {
+                grid-area: form;
+            }
+            .items {
+                grid-area: items;
+                h3 {
+                    font-size: 20px;
+                }
+            }
+            .notes {
+                grid-area: notes;
+                max-width: 610px;
+                max-height: 100px;
+            }
+        }
+        .second-step {
+            max-width: 500px;
+            margin: 0 auto;
+            .options {
+                font-size: 44px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1610px) {
+    .Checkout {
+        .first-step {
+            display: grid;
+            grid-template-columns: 4fr 100px 5fr;
+            max-width: 1400px;
+            .notes {
+                max-width: 730px;
+            }
+        }
+        .second-step {
+            max-width: 500px;
+            margin: 0 auto;
+            .options {
+                font-size: 44px;
+            }
+        }
+    }
+}

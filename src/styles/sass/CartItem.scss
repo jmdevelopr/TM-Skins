@@ -1,0 +1,42 @@
+.item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "img name"
+                         "quantity price";
+    margin-bottom: 20px;
+    width: 80%;
+    img {
+        width: 100px;
+    }
+    .item-name {
+        font-size: 12px;
+        text-align: right;
+        align-self: center;
+    }
+    .quantity-wrap {
+        align-self: center;
+        .quantity {
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 107px;
+            .icon {
+                width: 16px;
+                height: 16px;
+                color: #010101;
+                background: #F1F1F1;
+                border-radius: 30px;
+                padding: 2px;
+                cursor: pointer;
+            }
+        }
+    }
+    .item-price {
+        font-size: 12px;
+        text-align: right;
+        align-self: center;
+        color: #4FD500;
+    }
+}
