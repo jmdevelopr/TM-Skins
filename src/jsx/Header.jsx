@@ -9,7 +9,14 @@ import logo from '../assets/tms-logo.svg';
 
 import { Link } from "react-router-dom";
 
-const Header = () => {
+
+const Header = props => {
+
+    const handleSearch = () => {
+        const number = document.querySelector('.search-bar').value;
+        props.changeNumber(number)
+    }
+
     return (
         <header className="main-header">
             <Link to='/' className="logo">
@@ -32,7 +39,16 @@ const Header = () => {
                     </div>
                 </Link>
                 <div className="search">
+                    {props.barState
+                    ?
+                    <Link to="/track">
+                        <FontAwesomeIcon icon={faSearch} className="icon" onClick={() => handleSearch()}/>
+                    </Link>
+                    :
                     <FontAwesomeIcon icon={faSearch} className="icon"/>
+                    }
+                    
+                    <input type="text" placeholder="Enter a order number..." className="search-bar"/>
                 </div>
             </nav>
         </header>

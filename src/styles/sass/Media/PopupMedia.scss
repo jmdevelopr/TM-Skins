@@ -1,0 +1,80 @@
+@media screen and (min-width: 800px) {
+    .Popup {
+        min-height: 700px;
+        .popup-box {
+            height: 70%;
+            max-width: 800px;
+            h5 {
+                font-size: 24px;
+                max-width: 750px;
+                margin-bottom: 100px;
+            }
+            .item {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 50px 50px;
+                grid-template-areas: "img name"
+                                     "img price";
+                padding: 0 60px;
+                img {
+                    align-self: center;
+                }
+                .name {
+                    align-self: center;
+                }
+                .price {
+                    align-self: center;
+                }
+            }
+            .buttons {
+                width: 550px;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        #check {
+            height: 55%;
+            max-width: 700px;
+            h4 {
+                font-size: 24px;
+            }
+            .popup-desc {
+                font-weight: 500;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .Popup {
+        min-height: 700px;
+        .popup-box {
+            height: 70%;
+            max-width: 1000px;
+            padding: 60px 0;
+            h5 {
+                font-size: 30px;
+            }
+            .decide {
+                margin-bottom: 20px;
+            }
+            .buttons {
+                width: 650px;
+            }
+        }
+        #check {
+            height: 55%;
+            max-width: 700px;
+            padding: 40px 0;
+            h4 {
+                font-size: 30px;
+            }
+            .popup-desc {
+                max-width: 500px;
+            }
+            .buttons {
+                width: 550px;
+            }
+        }
+    }
+}

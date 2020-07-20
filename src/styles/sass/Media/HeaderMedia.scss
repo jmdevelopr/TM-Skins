@@ -14,7 +14,16 @@
         nav {
             font-size: 20px;
             .search {
-                font-size: 22px;
+                .icon {
+                    font-size: 22px;
+                }
+                .search-bar {
+                    position: absolute;
+                    height: 40px;
+                    padding: 0 20px;
+                    font-size: 14.5px;
+                    letter-spacing: .6px;
+                }
             }
         }
     }
@@ -30,7 +39,16 @@
         nav {
             font-size: 22px;
             .search {
-                font-size: 24px;
+                .icon {
+                    font-size: 24px;
+                }
+                .search-bar {
+                    position: absolute;
+                    height: 44px;
+                    padding: 0 20px;
+                    font-size: 15px;
+                    width: 120%;
+                }
             }
         }
     }

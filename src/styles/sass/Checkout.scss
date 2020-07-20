@@ -114,4 +114,13 @@
         justify-content: center;
         margin-bottom: 100px;
     }
+    .Popup {
+        .popup-box {
+            height: 60%;
+            max-width: 400px;
+            h4 {
+                font-size: 20px;
+            }
+        }
+    }
 }

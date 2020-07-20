@@ -2,18 +2,8 @@ import React, {Component} from 'react';
 import '../styles/css/Home.min.css';
 import '../styles/css/HomeMedia.min.css';
 
-import aAa from '../assets/skins/aAa.png';
-import Boom from '../assets/skins/Boom.png';
-import Exile from '../assets/skins/Exile.png';
-import Gorigin from '../assets/skins/Gorigin.png';
-import Kenny from '../assets/skins/Kenny.png';
-import Lulz from '../assets/skins/Lulz.png';
-import Oserv from '../assets/skins/Oserv.png';
-import Rin from '../assets/skins/Rin.png';
-import Spheriz from '../assets/skins/Spheriz.png';
-import Teamq from '../assets/skins/Teamq.png';
-
 import ShopItem from './elems/ShopItem';
+import HomePopUp from './elems/HomePopUp';
 
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -23,73 +13,23 @@ import { addToCart } from '../store/actions/shopActions';
 
 class Home extends Component {
 
-    shopItems = [
-        {
-            id: 'aAa',
-            img: aAa,
-            name: 'aAa 2018 skin by Peiks',
-            price: 6.99
-        },
-        {
-            id: 'Boom',
-            img: Boom,
-            name: 'Boom Studio skin by Peiks',
-            price: 8.99
-        },
-        {
-            id: 'Exile',
-            img: Exile,
-            name: 'Exile 2018 skin by Peiks',
-            price: 5.99
-        },
-        {
-            id: 'Gorigin',
-            img: Gorigin,
-            name: 'Games Origin skin by Peiks',
-            price: 7.99
-        },
-        {
-            id: 'Kenny',
-            img: Kenny,
-            name: 'KennyStream skin by Collor',
-            price: 4.99
-        },
-        {
-            id: 'Lulz',
-            img: Lulz,
-            name: 'LulZ skin by Collor',
-            price: 7.99
-        },
-        {
-            id: 'Oserv',
-            img: Oserv,
-            name: 'Oserv skin by Collor',
-            price: 6.99
-        },
-        {
-            id: 'Rin',
-            img: Rin,
-            name: 'Rin’s skin by Collor',
-            price: 5.99
-        },
-        {
-            id: 'Spheriz',
-            img: Spheriz,
-            name: 'Spheriz 2017-2018 skin by Peiks',
-            price: 7.99
-        },
-        {
-            id: 'Teamq',
-            img: Teamq,
-            name: 'Team Q 2017-2018 skin by Peiks',
-            price: 7.99
-        }
-    ]
+    state = {
+        item: null
+    }
 
     handleAddToCart = item => {
         const cartItem = {...item};
+        this.setState({item: cartItem})
+
         cartItem.quantity = 1;
         this.props.addToCart(cartItem)
+        
+        this.showPopUp();
+    }
+
+    showPopUp = () => {
+        const popup = document.querySelector('.Popup');
+        popup.style.display = "block";
     }
 
     render() {
@@ -111,6 +51,7 @@ class Home extends Component {
                     <div className="loading">Loading...</div>
                     }
                 </section>
+                <HomePopUp item={this.state.item}/>
             </div>
           );
     }
