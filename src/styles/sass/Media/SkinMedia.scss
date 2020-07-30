@@ -1,0 +1,95 @@
+@media screen and (min-width: 505px) {
+    .skin {
+        padding: 120px 50px 0;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .skin {
+        padding: 100px 70px 0;
+        .skin-data {
+            display: grid;
+            grid-template-columns: 400px 1fr 240px;
+            grid-template-rows: 30px 70px 100px 70px 100px;
+            grid-template-areas: "img . name"
+                                 "img . price"
+                                 "img . btn"
+                                 ". . ."
+                                 "desc desc desc";
+            height: auto;
+            img {
+                grid-area: img;
+                width: auto;
+                height: 100%;
+            }
+            .skin-name {
+                font-size: 16px;
+                grid-area: name;
+            }
+            .skin-price {
+                grid-area: price;
+                margin: 10px 0 0;
+            }
+            .skin-desc {
+                grid-area: desc;
+            }
+            .tmskins-btn {
+                grid-area: btn;
+                align-self: flex-end;
+                justify-self: start;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .skin {
+        .skin-data {
+            grid-template-columns: 3fr 40px 2fr;
+            grid-template-rows: 30px 30px 40px 100px 40px 70px;
+            grid-template-areas: "img . name"
+                                 "img . price"
+                                 "img . ."
+                                 "img . desc"
+                                 "img . ."
+                                 "img . btn";
+            margin-bottom: 80px;
+            .skin-name {
+                font-size: 18px;
+            }
+            .skin-desc {
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .skin {
+        .skin-data {
+            grid-template-rows: 40px 40px 50px 120px 50px 70px;
+            .skin-name {
+                font-size: 20px;
+            }
+            .skin-desc {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1610px) {
+    .skin {
+        padding: 120px 80px 0;
+        .skin-data {
+            grid-template-rows: 40px 40px 50px 120px 50px 70px;
+            .skin-name {
+                font-size: 20px;
+            }
+            .skin-desc {
+                font-size: 18px;
+                padding-right: 80px;
+            }
+        }
+    }
+}

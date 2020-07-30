@@ -12,9 +12,12 @@ import { Link } from "react-router-dom";
 
 const Header = props => {
 
-    const handleSearch = () => {
-        const number = document.querySelector('.search-bar').value;
-        props.changeNumber(number)
+    const handleSearch = e => {
+        //e.preventDefault();
+        let number = document.querySelector('.search-bar').value;
+        if (number.length > 0)
+            props.changeNumber(number)
+        document.querySelector('.search-bar').value = '';
     }
 
     return (
@@ -42,7 +45,7 @@ const Header = props => {
                     {props.barState
                     ?
                     <Link to="/track">
-                        <FontAwesomeIcon icon={faSearch} className="icon" onClick={() => handleSearch()}/>
+                        <FontAwesomeIcon icon={faSearch} className="icon" onClick={e => handleSearch(e)}/>
                     </Link>
                     :
                     <FontAwesomeIcon icon={faSearch} className="icon"/>

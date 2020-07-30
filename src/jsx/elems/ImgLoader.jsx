@@ -6,7 +6,7 @@ const ImgLoader = props => {
 
     const firebase = useFirebase();
     const storage = firebase.storage().ref();
-    storage.child(`${props.id}.png`).getDownloadURL().then(url => {
+    storage.child(`/${props.size}/${props.id}.jpg`).getDownloadURL().then(url => {
         setImg(url)
     });
 

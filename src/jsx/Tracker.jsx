@@ -10,14 +10,23 @@ import CartItem from './elems/CartItem';
 import firebase from '../config/fbConfig';
 import { useState } from 'react';
 
+let prevDocId = "";
+
 const Tracker = props => {
 
-    let [orderState, changeOrderState] = useState("")
-
+    let [orderState, changeOrderState] = useState(null)
+    
     const handleOrderLoad = () => {
         if (props.orderNumber !== null && props.orderNumber !== undefined) {
             getOrder(props.orderNumber);
         }
+    }
+
+    const handleSearch = () => {
+        let number = document.querySelector('#sbar').value;
+        if (number.length > 0)
+            props.changeNumber(number)
+        document.querySelector('#sbar').value = '';
     }
 
     const getOrder = order => {
@@ -25,15 +34,18 @@ const Tracker = props => {
         const docRef = db.collection("orders").doc(order);
         docRef.get().then(doc => {
             if (doc.exists) {
-                //component is rendering on its own all the time
-                console.log(doc.data)
-                changeOrderState(doc.data());
+                if (prevDocId !== doc.id) {
+                    prevDocId = doc.id;
+                    changeOrderState(doc.data());
+                }
             }
-            else 
-                changeOrderState("");
+            else {
+                prevDocId = "";
+                changeOrderState(null);
+            }
         }).catch(err => console.log(err))
     }
-
+    
     return (
         <div className="Tracker" onLoad={handleOrderLoad()}>
             <Back />
@@ -41,16 +53,16 @@ const Tracker = props => {
             <div className="search">
                 <input type="text" className="search-bar" id="sbar" placeholder="Enter a order number..."/>
                 <label htmlFor="sbar">
-                    <FontAwesomeIcon icon={faSearch} className="icon" />
+                    <FontAwesomeIcon icon={faSearch} className="icon" onClick={() => handleSearch()}/>
                 </label>
             </div>
             {props.orderNumber === null
             ?
                 <div></div>
-            : orderState === ""
+            : orderState === null
             ?
                 <div className="order-data">
-                    <p>Order not found.</p>
+                    <p className="no-content">Order not found.</p>
                 </div>
             :
                 <div className="order-data">

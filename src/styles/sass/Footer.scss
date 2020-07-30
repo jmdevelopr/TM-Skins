@@ -1,7 +1,69 @@
-footer {
+.Footer {
     background: #1F1F1F;
     width: 100%;
-    height: 60px;
+    height: 140px;
     text-align: center;
-    font-size: 9px;
+    display: grid;
+    grid-template-rows: 60px 20px 16px 30px;
+    grid-template-areas: "sponsors"
+                         "info"
+                         "."
+                         "social-media";
+    .sponsors {
+        grid-area: sponsors;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .img-wrapper {
+            width: 100%;
+            max-width: 340px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-around;
+            img {
+                height: 16px;
+            }
+        }
+    }
+    .info {
+        grid-area: info;
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        padding: 0 10px;
+        max-width: 400px;
+        font-size: 12px;
+        font-weight: lighter;
+        display: grid;
+        grid-template-areas: "terms rights privacy";
+        .terms {
+            grid-area: terms;
+        }
+        .rights {
+            grid-area: rights;
+        }
+        .privacy {
+            grid-area: privacy;
+        }
+    }
+    .social-media {
+        grid-area: social-media;
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        .icon-wrapper {
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 220px;
+            padding: 0 20px;
+            .icon {
+                font-size: 20px;
+            }
+        }
+    }
 }

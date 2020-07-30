@@ -11,7 +11,7 @@ const ShopItem = props => {
     
     return (
         <div className="item">
-            <ImgLoader id={props.item.id} />
+            <ImgLoader id={props.item.id} size={120}/>
             <p className="item-name">{props.item.name}</p>
             {
                 props.checkout

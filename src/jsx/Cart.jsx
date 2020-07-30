@@ -61,7 +61,7 @@ class Cart extends Component {
             <div className="Cart">
                 <Back />
                 <h3>CART</h3>
-                <p>Your cart is empty</p>
+                <p className="no-content">Your cart is empty</p>
             </div>
         )
     }

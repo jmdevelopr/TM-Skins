@@ -12,7 +12,11 @@
   height: 100%;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: 60px 1fr 60px;
+  grid-template-areas: "header"
+                       "content"
+                       "footer";
 }
 
 .App h3, .App h4, .App h5 {

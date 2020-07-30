@@ -20,7 +20,7 @@ const HomePopUp = props => {
             <div className="popup-box">
                 <h5>A FOLLOWING ITEM HAS BEEN ADDED TO CART</h5>
                 <div className="item">
-                    <ImgLoader id={props.item.id} />
+                    <ImgLoader id={props.item.id} size={205}/>
                     <p className="name">{props.item.name}</p>
                     <p className="price">Price: <span className="price-value">${props.item.price}</span></p>
                 </div>

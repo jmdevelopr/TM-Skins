@@ -49,15 +49,33 @@
             font-size: 30px;
             margin-bottom: 80px;
         }
-        .skin {
+        .shop-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-direction: column;
             margin-bottom: 70px;
             height: 300px;
-            img {
-                width: 265px;
+            .link {
+                position: relative;
+                &:before {
+                    content: 'CLICK TO SEE DETAILS';
+                    background: rgba(0, 0, 0, .55);
+                    position: absolute;
+                    width: 100%;
+                    line-height: 150px;
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: bolder;
+                    opacity: 0;
+                    transition: .2s ease-in-out;
+                }
+                img {
+                    width: 265px;
+                }
+                &:hover:before {
+                    opacity: 1;
+                }
             }
             .skin-name {
                 font-size: 16px;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import Header from './jsx/Header';
@@ -16,11 +16,25 @@ import {
   Route
 } from "react-router-dom";
 
-function App() {
-
+const App = () => {
+  let [webPComp, changeWebPComp] = useState("")
   let [SBar, changeSBar] = useState(false)
-
   let [orderNumber, changeOrderNumber] = useState(null);
+
+  const canUseWebP = () => {
+    let elem = document.createElement('canvas');
+
+    if (!!(elem.getContext && elem.getContext('2d')))
+        // was able or not to get WebP representation
+        return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+
+    // very old browser like IE 8, canvas not supported
+    return false;
+  }
+
+  useEffect(()=>{
+    changeWebPComp(canUseWebP());
+  }, [])
 
   const clickCheck = e => {
     e = e || window.event;
@@ -59,7 +73,7 @@ function App() {
             <Checkout />
           </Route>
           <Route path="/track">
-            <Tracker orderNumber={orderNumber}/>
+            <Tracker orderNumber={orderNumber} changeNumber={number => changeOrderNumber(number)}/>
           </Route>
           <Route path="/:skin" component={Skin} />
         </Switch>
