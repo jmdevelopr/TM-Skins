@@ -33,4 +33,4 @@ Link to a deployed version: https://trackmaniaskins.web.app/
 - react-router
 - Redux
 - redux-thunk
-- firebase
+- Firebase
